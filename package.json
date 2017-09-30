@@ -1,0 +1,24 @@
+{
+  "name": "chatcat",
+  "version": "1.0.0",
+  "description": "Browser based chat app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Teekay",
+  "license": "ISC",
+  "engines": {
+    "node": "6.9.1"
+  },
+  "dependencies": {
+    "connect-mongo": "^1.3.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.7",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-twitter": "^1.0.4"
+  }
+}
