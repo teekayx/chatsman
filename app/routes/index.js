@@ -11,14 +11,16 @@ module.exports = () => {
                     pageTitle: 'Login Page'
                 });
             },
-            '/rooms': (req,res,next) => {
+            '/rooms': [helper.isAuthenticated, (req,res,next) => {
                 res.render('rooms', {
                     user :req.user
                 });
-            },
-            '/chat': (req,res,next)=>{
-                res.render('chatroom');
-            },
+            }],
+            '/chat': [helper.isAuthenticated, (req,res,next)=>{
+                res.render('chatroom', {
+                    user: req.user
+                });
+            }],
             '/getsession' : (req,res,next) => {
                 res.send("routed through getsession and color in session is "+req.session.favColor);
             },
@@ -30,7 +32,16 @@ module.exports = () => {
             '/auth/facebook/callback' : passport.authenticate('facebook', {
                 successRedirect : '/rooms',
                 failureRedirect : '/'
-            })
+            }),
+            '/auth/twitter' : passport.authenticate('twitter'),
+            '/auth/twitter/callback' : passport.authenticate('twitter', {
+                successRedirect : '/rooms',
+                failureRedirect : '/'
+            }),
+            '/logout' : (req,res,next) => {
+                req.logout();
+                res.redirect('/');
+            }
         },
         'post': {
 

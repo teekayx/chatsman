@@ -4,6 +4,7 @@ const passport = require('passport');
 const config = require('../config');
 const helper = require('../helpers')
 const facebookStrategy = require('passport-facebook').Strategy;
+const twitterStrategy = require('passport-twitter').Strategy;
 
 module.exports = () => {
     passport.serializeUser((user, done)=>{
@@ -30,4 +31,5 @@ module.exports = () => {
             });
     }
     passport.use(new facebookStrategy(config.fb, authProcessor));
+    passport.use(new twitterStrategy(config.twitter, authProcessor));
 }

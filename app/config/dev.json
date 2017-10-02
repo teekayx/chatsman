@@ -5,7 +5,13 @@
     "fb" :{
         "clientID" : "1451818498236422",
         "clientSecret" : "64caa6503bd05e8fde7a4f05fe1e4c37",
-        "callbackURL" : "//localhost:3000/auth/facebook/callback",
+        "callbackURL" : "http://localhost:3000/auth/facebook/callback",
         "profileFields" : ["id", "displayName", "photos"]
+    },
+    "twitter" :{
+        "consumerKey" : "tM5pD1vHliVDteE8V6j9KTp1F" ,
+        "consumerSecret" : "j9jKMUmsYCHnerrKyELba4yEesv0Ujf7rGQ8TNyGy5IOWRwvey",
+        "callbackURL" : "http://localhost:3000/auth/twitter/callback",
+        "profileFields" : ["id", "displayName", "photos"]   
     }
 }
