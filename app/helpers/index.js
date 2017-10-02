@@ -19,12 +19,14 @@ let _registerRoutes = (routes, method) => {
         }
     }
 }
+//search in DB for the ID retrieved from facebook
 let findOne = profileID => {
     return db.userModel.findOne({
         "profileId" :  profileID
     });
 }
 
+//create a new user and store it in db
 let createNewUser = profile => {
     return new Promise((resolve,reject) => {
         let newUser = new db.userModel({
@@ -42,6 +44,21 @@ let createNewUser = profile => {
         })
     });
 }
+
+//promisified version of findByID
+let findById = (id) => {
+    return new Promise((resolve,reject) => {
+        db.userModel.findById(id, (error, user) => {
+            if(error){
+                reject(error);
+            } else {
+                resolve(user);
+            }
+        });
+    });
+}
+
+//route handler done elegantly
 let route = routes => {
     _registerRoutes(routes);
     return router;
@@ -50,5 +67,6 @@ let route = routes => {
 module.exports = {
     route,
     findOne,
-    createNewUser
+    createNewUser,
+    findById
 }

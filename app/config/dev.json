@@ -1,11 +1,11 @@
 {
     "host" : "http://localhost:3000",
-    "dbURI" : "mongodb://teekay:Bootstr%40p@cluster0-shard-00-00-nwtgf.mongodb.net:27017,cluster0-shard-00-01-nwtgf.mongodb.net:27017,cluster0-shard-00-02-nwtgf.mongodb.net:27017/chatcat?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
+    "dbURI" : "mongodb://teekay:Bootstr%40p@cluster0-shard-00-00-nwtgf.mongodb.net:27017,cluster0-shard-00-01-nwtgf.mongodb.net:27017,cluster0-shard-00-02-nwtgf.mongodb.net:27017/chatsman?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
     "sessionSecret" : "topsecret",
     "fb" :{
         "clientID" : "1451818498236422",
         "clientSecret" : "64caa6503bd05e8fde7a4f05fe1e4c37",
-        "callback" : "//localhost:3000/auth/facebook/callback",
+        "callbackURL" : "//localhost:3000/auth/facebook/callback",
         "profileFields" : ["id", "displayName", "photos"]
     }
 }

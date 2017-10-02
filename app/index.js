@@ -10,6 +10,7 @@
 // router.get('/info', (req,res,next)=>{
 //     res.send('Test page');
 // });
+require('./auth')();
 
 module.exports = {
     router : require('./routes')(),

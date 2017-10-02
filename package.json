@@ -1,5 +1,5 @@
 {
-  "name": "chatcat",
+  "name": "chatsman",
   "version": "1.0.0",
   "description": "Browser based chat app",
   "main": "app.js",
@@ -19,6 +19,7 @@
     "mongoose": "^4.11.7",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7"
   }
 }

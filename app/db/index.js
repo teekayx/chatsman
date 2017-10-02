@@ -9,17 +9,17 @@ mongoose.connect(config.dbURI,{
 
 //Get the default connection
 var db = mongoose.connection;
-//
-// //Bind connection to error event (to get notification of connection errors)
+
+// Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-const chatsman = new mongoose.Schema({
+const chatUser = new mongoose.Schema({
     profileId : String,
     fullName : String,
     profilePic : String
 });
 
-let userModel = Mongoose.model('chatsman', chatsman);
+let userModel = mongoose.model('chatUser', chatUser);
 
 module.exports = {
     mongoose,
