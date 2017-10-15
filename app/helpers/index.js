@@ -2,6 +2,7 @@
 
 const router = require('express').Router();
 const db = require('../db');
+const crypto = require('crypto');
 
 let _registerRoutes = (routes, method) => {
     for(let key in routes){
@@ -71,10 +72,27 @@ let isAuthenticated = (req,res,next) => {
         res.redirect('/');
     }
 }
+
+let findRoomByName = (allrooms, room) => {
+    let findRoom = allrooms.findIndex((element, index, array) => {
+        if(element.room === room)
+            return true;
+        else {
+            return false
+        }
+    });
+    return findRoom > -1 ? true : false;
+}
+
+let randomHex = () => {
+    return crypto.randomBytes(24).toString('hex');
+}
 module.exports = {
     route,
     findOne,
     createNewUser,
     findById,
-    isAuthenticated
+    isAuthenticated,
+    findRoomByName,
+    randomHex
 }

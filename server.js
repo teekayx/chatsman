@@ -19,6 +19,6 @@ app.use(passport.session());
 
 app.use('/', chatsMan.router);
 
-app.listen(app.get('port'), () => {
+chatsMan.ioServer(app).listen(app.get('port'), () => {
     console.log('chatsman running on port:', app.get('port'));
 });
